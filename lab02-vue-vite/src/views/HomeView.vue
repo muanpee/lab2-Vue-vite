@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue';
-import { ref } from 'vue';
+import EventMeta from '@/components/EventMeta.vue';
+import { ref, computed } from 'vue';
 import type { Event } from '@/types'
 const events = ref<Event[]>([
   {
@@ -35,12 +36,42 @@ const events = ref<Event[]>([
   time: '11:00',
   petsAllowed: false,
   organizer: 'Carey Wales'
-  }])
+  }
+])
+
+const animalWelfareEvent = computed(() =>
+  events.value.find(e => e.category === 'animal welfare')
+)
 
 </script>
 
 <template>
-<div class="home">
-  <EventCard v-for="event in events" :key="event.id" :event="event"/>
-</div>
+  <div>
+    <div class="events">
+      <div
+        v-for="event in events"
+        :key="event.id"
+      >
+        <EventCard :event="event" />
+      </div>
+    </div>
+    <!-- Show animal welfare EventMeta only once, on the right -->
+    <div class="animal-welfare-meta">
+      <EventMeta
+        v-if="animalWelfareEvent"
+        :event="animalWelfareEvent"
+      />
+    </div>
+  </div>
 </template>
+<style scoped>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.animal-welfare-meta {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>
