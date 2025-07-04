@@ -46,6 +46,7 @@ const animalWelfareEvent = computed(() =>
 </script>
 
 <template>
+  <h1>Events for Good</h1>
   <div>
     <div class="events">
       <div
