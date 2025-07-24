@@ -13,7 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
   </header>
-  
+
   <RouterView />
   </div>
 </template>
@@ -35,7 +35,7 @@ nav a {
   font-weight: bold;
   color: #2c3e50
 }
-nav a.router-link-active {
+nav a.router-link-exact-active {
   color: #42b983;
 }
 h2 {
