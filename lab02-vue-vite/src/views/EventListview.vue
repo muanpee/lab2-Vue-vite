@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
    <h1>Events For Good</h1>
-  <div class="events-container">
+    <div class="flex flex-col items-center">
     <div class="event-column">
       <EventCard v-for="event in events" :key="event.id" :event="event" />
     </div>
@@ -58,11 +58,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.events-container {
+/* .events-container {
   display: flex; 
   justify-content: center; 
   gap: 20px; 
-}
+} */
 
 .event-column {
   display: flex;
