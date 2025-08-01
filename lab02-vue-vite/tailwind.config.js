@@ -10,6 +10,18 @@ export default {
         'sp': '0 3px 12px 0 rgba(0, 0, 0, 0.2)',
       } 
     },
+    fontFamily: {
+      sans: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'],
+    },
+    animation: {
+      fade: 'yellow 1s ease-in-out;',
+  },
+  keyframes: {
+    yellowFage: {
+      '0%': { backgroundColor: 'yellow' },
+      '100%': { backgroundColor: 'transparent' },
+    },
+  },
   },
   plugins: [],
 }
